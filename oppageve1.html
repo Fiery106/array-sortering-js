@@ -16,11 +16,29 @@
 
 
         <body>
-            <div>
+            <div name="findHighest">
                 <label>
                     Finn høyeste verdien i arrayen
                 </label>
                 <button onclick="findHighest()">
+                    Klikk
+                </button>
+            </div>
+
+            <div name="basicSort">
+                <label>
+                    Sorter verdiene fra laveste til høyeste
+                </label>
+                <button onclick="basicSort()">
+                    Klikk
+                </button>
+            </div>
+
+            <div name="basicSort2">
+                <label>
+                    Sorter verdiene fra høyeste til laveste
+                </label>
+                <button onclick="basicSort2()">
                     Klikk
                 </button>
             </div>
@@ -54,6 +72,28 @@
 
                 writeOutput(
                     `Den høyeste verdien i arrayen er ${num}`
+                )
+            }
+
+
+            function basicSort() {
+                let sortertArr = arr.sort(function(a, b){return a-b});
+
+                writeOutput(
+                    `
+                    ${sortertArr}
+                    `
+                )
+            }
+
+
+            function basicSort2() {
+                let reversertArr = arr.sort(function(a, b){return b-a});
+
+                writeOutput(
+                    `
+                    ${reversertArr}
+                    `
                 )
             }
 
