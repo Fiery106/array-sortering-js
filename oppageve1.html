@@ -61,7 +61,27 @@
                 </button>
             </div>
 
-            <p id="output"></p>
+            <div name="checkArray">
+                <label>
+                    Sjekk om arrayen er faktisk et array
+                </label>
+                <button onclick="checkArray()">
+                    Klikk
+                </button>
+            </div>
+            
+            <div name="absoluteArray">
+                <label>
+                    Setter alle elementen i arrayen til absolute verdier
+                </label>
+                <button onclick="absoluteArray()">
+                    Klikk
+                </button>
+            </div>
+
+            <p id="output">
+                eieio
+            </p>
         </body>
 
 
@@ -77,7 +97,7 @@
             let arr = [1, 2.3, -4, 5.7, -7.2, 13, 59];
             let ny = 92;
 
-            //push(), shift()
+            Array.isArray()
 
             function findHighest() {
                 let num = 0;
@@ -157,6 +177,29 @@
                 writeOutput(
                     `
                     ${melding}
+                    `
+                )
+            }
+
+            function checkArray() {
+                if (Array.isArray(arr)) {
+                    writeOutput("Arrayen er et ekte array :)")
+                } else {
+                    writeOutput("Arrayen er ikke et array :(")
+                }
+            }
+
+
+            function absoluteArray() {
+                let nyArr = [];
+
+                for (i = 0; i < arr.length; i++) {
+                    nyArr.push(Math.abs(arr[i]))
+                }
+
+                writeOutput(
+                    `
+                    ${nyArr}
                     `
                 )
             }
