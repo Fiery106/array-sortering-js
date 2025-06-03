@@ -43,6 +43,24 @@
                 </button>
             </div>
 
+            <div name="addElement">
+                <label>
+                    Legger til en ny element og skriver ut lengden av arrayen
+                </label>
+                <button onclick="addElement()">
+                    Klikk
+                </button>
+            </div>
+
+            <div name="removeElement">
+                <label>
+                    Sletter den første elementet og skriver ut lengden av arrayen
+                </label>
+                <button onclick="removeElement()">
+                    Klikk
+                </button>
+            </div>
+
             <p id="output"></p>
         </body>
 
@@ -57,7 +75,9 @@
         <script>
             let output = document.getElementById("output");
             let arr = [1, 2.3, -4, 5.7, -7.2, 13, 59];
+            let ny = 92;
 
+            //push(), shift()
 
             function findHighest() {
                 let num = 0;
@@ -93,6 +113,50 @@
                 writeOutput(
                     `
                     ${reversertArr}
+                    `
+                )
+            }
+
+
+            function addElement() {
+                let nyArr = [];
+                let melding = "";
+
+                for (i = 0; i < arr.length; i++) {
+                    nyArr.push(arr[i])
+                } nyArr.push(ny);
+
+                melding = `
+                    Lengden av arrayen var ${arr.length} <br>
+                    Etter vi har legget til elementet ${ny},blir lengden nå: ${nyArr.length} <br>
+                    ${nyArr}
+                `
+
+                writeOutput(
+                    `
+                    ${melding}
+                    `
+                )
+            }
+
+
+            function removeElement() {
+                let nyArr = [];
+                let melding = "";
+
+                for (i = 0; i < arr.length; i++) {
+                    nyArr.push(arr[i])
+                } nyArr.shift();
+
+                melding = `
+                    Lengden av arrayen var ${arr.length} <br>
+                    Etter vi har slettet den første elementet ${arr[0]},blir lengden nå: ${nyArr.length} <br>
+                    ${nyArr}
+                `
+
+                writeOutput(
+                    `
+                    ${melding}
                     `
                 )
             }
